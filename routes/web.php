@@ -22,6 +22,9 @@ Route::get('/create', function () {
     $tenant2 = Tenant::create(['id' => 'bar']);
     $tenant2->domains()->create(['domain' => 'bar.' . env('APP_BASE_URL')]);
 
+    $tenant3 = Tenant::create(['id' => 'moauya']);
+    $tenant3->domains()->create(['domain' => 'moauya.tk']);
+
     Tenant::all()->runForEach(function () {
         User::factory()->create();
     });
