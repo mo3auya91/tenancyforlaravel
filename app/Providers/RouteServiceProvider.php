@@ -38,20 +38,20 @@ class RouteServiceProvider extends ServiceProvider
         $this->configureRateLimiting();
 
         $this->routes(function () {
-            foreach ($this->centralDomains() as $domain) {
+            //foreach ($this->centralDomains() as $domain) {
                 Route::prefix('api')
-                    ->domain($domain)
+                    //->domain($domain)
                     ->middleware('api')
                     ->namespace($this->namespace)
                     ->group(base_path('routes/api.php'));
-            }
+            //}
 
-            foreach ($this->centralDomains() as $domain) {
+            //foreach ($this->centralDomains() as $domain) {
                 Route::middleware('web')
-                    ->domain($domain)
+                    //->domain($domain)
                     ->namespace($this->namespace)
                     ->group(base_path('routes/web.php'));
-            }
+            //}
         });
     }
 
