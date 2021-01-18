@@ -31,5 +31,6 @@ Route::get('/create', function () {
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    //return User::all();
     return Inertia::render('Dashboard');
 })->name('dashboard');

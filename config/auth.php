@@ -1,5 +1,10 @@
 <?php
 
+//$model = in_array(request()->getHost(), explode(',', env('CENTRAL_DOMAINS')))
+//    ? App\Models\User::class
+//    : App\Models\Tenant\User::class;
+
+$model = App\Models\User::class;
 return [
 
     /*
@@ -68,7 +73,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+            'model' => $model,
         ],
 
         // 'users' => [
